@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+<body>
+	<h1>Песня: <span class="name">none</span></h1>
+	<iframe src="" class="song col-4"></iframe>
+	<div>
+		<button class="btn1 col-2">prev</button>
+		<button class="btn2 col-2">next</button>
+	</div>
+
+	<script type="text/javascript">
+		let name = document.querySelector('.name')
+		let song = document.querySelector('.song')
+		let btn1 = document.querySelector('.btn1')
+		let btn2 = document.querySelector('.btn2')
+
+		let playlist = ['Chief Keef - 2 Cell Phones.mp3', 'Chief Keef - Groovin (feat. Fredo Santana) Prod. Pierre Bourne.mp3', 'Chief Keef - No Bap.mp3']
+		let num = 0
+		name.innerHTML = playlist[num]
+		song.src = 'Chief Keef - 2 Cell Phones.mp3'
+		btn1.onclick = function(){
+			if (num==0){
+				num = 3
+			}
+			num-=1
+			name.innerHTML = playlist[num]
+			song.src = playlist[num]
+
+		}
+
+		btn2.onclick = function(){
+			if (num==2){
+				num = -1
+			}
+			num+=1
+			name.innerHTML = playlist[num]
+			song.src = playlist[num]
+		}
+	</script>
+</body>
+</html>
